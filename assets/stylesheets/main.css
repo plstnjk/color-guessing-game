@@ -1,0 +1,76 @@
+body {
+    background-color: #555C6F;
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    /* border: 5px solid red; */
+}
+
+.square {
+    width: 30%;
+    padding-bottom: 30%;
+    float: left;
+    margin: 1.66%;
+    border-radius: 20%;
+    transition: background-color 0.5s;
+    -webkit-transition: background-color 0.5s; /* for browser support*/
+    -moz-transition: background-color 0.5s; /* for browser support*/
+}
+
+#container {
+    max-width: 40%;
+    margin: 30px auto;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-align: center;
+    color: whitesmoke;
+    background-color: coral;
+    margin: 0;
+    padding: 30px 0;
+    
+}
+
+#color-display {
+    font-size: 55px;
+}
+
+#nav {
+    height: 40px;
+    text-align: center;
+    background-color:whitesmoke;
+    
+}
+
+button {
+    border: none;
+    background: none;
+    height: 100%;
+    color: coral;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s; /* for browser support*/
+    -moz-transition: all 0.2s; /* for browser support*/
+    outline: none; /* for browser support*/
+    /* font-size: inherit; */
+}
+
+button:hover {
+    color: whitesmoke;
+    background-color: coral;
+}
+
+#messageDisplay {
+    color: #555C6F;
+    display: inline-block;
+    width: 10%;
+    font-weight: bold;
+    /* font-size: inherit; */
+}
+
+.selected {
+    background-color:coral;
+    color: whitesmoke;
+}
