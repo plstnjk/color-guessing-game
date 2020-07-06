@@ -1,12 +1,14 @@
 var numOfSquares = 6;
 var colors = generateRandomColors(numOfSquares);
+var body = document.querySelector("body");
 var squares = document.querySelectorAll(".square");
 var pickedColor = pickRandomColorFromArray();
 var colorDisplay = document.querySelector("#color-display");
 var resultDisplay = document.querySelector("#messageDisplay");
-var header = document.querySelector("h1");
 var resetButton = document.getElementById("reset");
 var modeButtons = document.querySelectorAll(".mode");
+var themeToggleButton = document.querySelector(".theme-toggle");
+var theme = false;
 
 for (var i = 0; i < modeButtons.length; i++) {
     modeButtons[i].addEventListener("click", function () {
@@ -14,7 +16,7 @@ for (var i = 0; i < modeButtons.length; i++) {
         modeButtons[1].classList.remove("selected");
         this.classList.add("selected");
 
-        this.textContent === "EASY" ? numOfSquares = 3 : numOfSquares = 6;
+        this.textContent === "Easy" ? numOfSquares = 3 : numOfSquares = 6;
         reset();
     })
 }
@@ -29,18 +31,26 @@ for (var i = 0; i < squares.length; i++) {
         // compare the color of the clicked square with the color that was picked
         var clickedColor = this.style.backgroundColor;
         if (clickedColor !== pickedColor) {
-            this.style.backgroundColor = "#555C6F";
-            resultDisplay.textContent = "TRY AGAIN!";
+            if (!theme) {
+                this.style.backgroundColor = "#303d44";
+            } else {
+                this.style.backgroundColor = "whitesmoke";
+            }
+            resultDisplay.textContent = "NO";
         } else {
             changeColor(pickedColor);
-            resultDisplay.textContent = "CORRECT!";
-            resetButton.textContent = "PLAY AGAIN?";
+            resultDisplay.textContent = "YES";
+            resetButton.textContent = "Play again?";
         }
     });
 };
 
 resetButton.addEventListener("click", function () {
     reset();
+});
+
+themeToggleButton.addEventListener("click", function () {
+    toggleTheme();
 });
 
 
@@ -50,8 +60,7 @@ function reset() {
     colorDisplay.textContent = pickedColor;
 
     resultDisplay.textContent = "";
-    header.style.backgroundColor = "coral"; //
-    resetButton.textContent = "NEW COLORS";
+    resetButton.textContent = "New Colors";
 
     for (var i = 0; i < squares.length; i++) {
         if (colors[i]) {
@@ -67,7 +76,6 @@ function reset() {
 function changeColor(color) {
     for (var j = 0; j < squares.length; j++) {
         squares[j].style.backgroundColor = color;
-        // header.style.backgroundColor = color;
     }
 };
 
@@ -91,3 +99,17 @@ function pickRandomColorFromArray() {
     var randomIndex = Math.floor(Math.random() * colors.length);
     return colors[randomIndex];
 };
+
+function toggleTheme() {
+    if (!theme) {
+        body.style.backgroundColor = "whitesmoke";
+        body.style.color = "#303d44";
+        resultDisplay.style.color = "#303d44";
+
+    } else {
+        body.style.backgroundColor = "#303d44";
+        body.style.color = "whitesmoke";
+        resultDisplay.style.color = "whitesmoke";
+    }
+    theme = !theme;
+}
