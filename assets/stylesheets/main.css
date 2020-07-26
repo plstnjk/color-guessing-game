@@ -78,9 +78,10 @@ button {
 
 
 
-button:hover {
+button:hover, button:active, button:focus {
     color: tomato;
     background-color: whitesmoke;
+    border: 1px solid tomato;
 }
 
 #messageDisplay {
@@ -94,10 +95,11 @@ button:hover {
 .selected {
     background-color: whitesmoke;
     color: tomato;
+    border: 1px solid tomato;
 }
 
-.selected:active {
-    background-color: #555C6F;
+.selected:active, .selected:hover {
+    background-color: tomato;
     color: whitesmoke;
 }
 
