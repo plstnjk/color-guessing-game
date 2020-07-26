@@ -98,7 +98,7 @@ button:hover, button:active, button:focus {
     border: 1px solid tomato;
 }
 
-.selected:active, .selected:hover {
+.selected:active {
     background-color: tomato;
     color: whitesmoke;
 }
