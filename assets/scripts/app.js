@@ -102,14 +102,14 @@ function pickRandomColorFromArray() {
 
 function toggleTheme() {
     if (!theme) {
-        body.style.backgroundColor = "whitesmoke";
-        body.style.color = "#303d44";
-        resultDisplay.style.color = "#303d44";
-
-    } else {
         body.style.backgroundColor = "#303d44";
         body.style.color = "whitesmoke";
         resultDisplay.style.color = "whitesmoke";
+
+    } else {
+        body.style.backgroundColor = "whitesmoke";
+        body.style.color = "#303d44";
+        resultDisplay.style.color = "#303d44";
     }
     theme = !theme;
 }

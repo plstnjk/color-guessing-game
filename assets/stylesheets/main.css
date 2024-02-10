@@ -1,6 +1,6 @@
 body {
-    background-color: #303d44;
-    color: whitesmoke;
+    background-color: whitesmoke;
+    color: #303d44;
     font-family: 'Nunito', sans-serif;
     margin: 0;
 }
@@ -13,8 +13,10 @@ body {
     border-radius: 15%;
     border: none;
     transition: background-color 0.5s;
-    -webkit-transition: background-color 0.5s; /* for browser support*/
-    -moz-transition: background-color 0.5s; /* for browser support*/
+    -webkit-transition: background-color 0.5s;
+    /* for browser support*/
+    -moz-transition: background-color 0.5s;
+    /* for browser support*/
 }
 
 .container {
@@ -42,7 +44,7 @@ body {
 .heading h2 {
     text-transform: uppercase;
     font-size: 1rem;
-    text-align: center; 
+    text-align: center;
 }
 
 .color-display {
@@ -58,7 +60,7 @@ body {
     height: 45px;
     text-align: center;
     width: 80%;
-    margin: 0 10%;    
+    margin: 0 10%;
 }
 
 button {
@@ -71,14 +73,19 @@ button {
     color: white;
     font-size: 17px;
     transition: all 0.2s;
-    -webkit-transition: all 0.2s; /* for browser support*/
-    -moz-transition: all 0.2s; /* for browser support*/
-    outline: none; /* for browser support*/
+    -webkit-transition: all 0.2s;
+    /* for browser support*/
+    -moz-transition: all 0.2s;
+    /* for browser support*/
+    outline: none;
+    /* for browser support*/
 }
 
 
 
-button:hover, button:active, button:focus {
+button:hover,
+button:active,
+button:focus {
     color: tomato;
     background-color: whitesmoke;
     border: 1px solid tomato;
